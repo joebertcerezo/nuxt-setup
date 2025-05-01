@@ -95,9 +95,4 @@ pnpm lint:fix
 
 ---
 
-## 📘 License
-
-MIT © 2025
-
----
 
