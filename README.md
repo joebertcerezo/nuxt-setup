@@ -1,75 +1,103 @@
-# Nuxt Minimal Starter
+# 🧠 Nuxt.js Starter Template — ESLint Configuration Guide
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project is a comprehensive **Nuxt 3 starter template** with an advanced and modular ESLint setup. It emphasizes **clean code**, **best practices**, and **development efficiency** with a modern, flat ESLint configuration (`eslint.config.ts`).
 
-## Setup
+---
 
-Make sure to install dependencies:
+## 📁 ESLint Configuration Structure
+
+This project uses the new **flat config** format (introduced in ESLint v9+) and separates concerns into modular files:
+
+| File | Purpose |
+|------|---------|
+| `eslint.config.ts` | 🧩 Main config — imports all others |
+| `eslint.ts` | 🧪 Core JavaScript linting rules |
+| `typescript-eslint.ts` | ⚙️ TypeScript-specific linting |
+| `vue.ts` | 🧱 Vue.js component rules |
+| `vue-i18n.ts` | 🌐 i18n internationalization rules |
+| `stylistic.ts` | 🎨 Code style and formatting |
+| `jconc.ts` | 📦 JSON/JSONC file rules |
+
+---
+
+## 🚀 Key Features
+
+### 🧪 JavaScript Rules
+- Disallow problematic code (e.g., `var`, unused vars)
+- Encourage modern syntax (arrow functions, template literals)
+- Limit complexity (e.g., max depth, max nesting)
+
+### ⚙️ TypeScript Rules
+- Strict typing and method signature enforcement
+- No shadowed variables or implicit `any`s
+- Promotes type safety and clarity
+
+### 🧱 Vue Rules
+- Enforces `<template> → <script> → <style>` order
+- Mandates `<script setup>` usage
+- Typed `props` and `emits` required
+- Enforces naming and attribute order conventions
+
+### 🌐 Internationalization (Vue I18n)
+- Locale keys must be in `snake_case`
+- Prevents missing or unused translations
+- Handles proper file structure and versioning
+
+### 🎨 Code Style & Formatting
+- Unified quote style, spacing, and semicolons
+- Clean and modern stylistic conventions
+
+### 📦 JSON/JSONC Rules
+- Supports linting for `.json` and `.jsonc` files
+- Automatically sorts locale files
+
+---
+
+## 🔗 Nuxt Integration
+
+Using `withNuxt()` in the main ESLint config, Nuxt-specific files and patterns are seamlessly linted following best practices — including auto-imported components, composables, and app directories.
+
+---
+
+## 🛠 Getting Started
 
 ```bash
-# npm
+# Install dependencies
 npm install
-
-# pnpm
+# or
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+# Run linter
+npm run lint
+# or
+pnpm lint
 ```
-
-## Production
-
-Build the application for production:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+# Fix auto-fixable issues
+npm run lint:fix
+# or
+pnpm lint:fix
 ```
 
-Locally preview production build:
+---
 
-```bash
-# npm
-npm run preview
+## 📦 Dependencies
 
-# pnpm
-pnpm preview
+- **ESLint v9+**
+- `@typescript-eslint/*`
+- `eslint-plugin-vue`
+- `eslint-plugin-jsonc`
+- `eslint-plugin-vue-i18n`
+- `@stylistic/eslint-plugin`
 
-# yarn
-yarn preview
+---
 
-# bun
-bun run preview
-```
+## 📘 License
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+MIT © 2025
+
+---
+
